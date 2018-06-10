@@ -7,6 +7,8 @@
 extern "C" {
 #endif
 
+#define INI_PARSER_FILE_ENABLE
+
 #define INI_ERR  (-1)
 
 typedef struct ini_item {
@@ -52,6 +54,7 @@ struct ini_parser *ini_parser_str_parse(const char *str);
  */
 char *ini_parser_str_output(struct ini_parser *obj);
 
+#ifdef INI_PARSER_FILE_ENABLE
 /*
  * \brief Parse INI-File
  * \param[in] file_name: ini-file name.
@@ -66,6 +69,7 @@ struct ini_parser *ini_parser_file_parse(const char *file_name);
  * \retval -1: save failed.
  */
 int ini_parser_file_save(struct ini_parser *obj, const char *file_name);
+#endif
 
 /*
  * \brief Set value by s_name and key.

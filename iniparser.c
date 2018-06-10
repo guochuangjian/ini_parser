@@ -433,6 +433,7 @@ char *ini_parser_str_output (struct ini_parser *obj)
     return ini_str;
 }
 
+#ifdef INI_PARSER_FILE_ENABLE
 static const char *__file_get_line (FILE *fd, char *s, int len)
 {
     char ch;
@@ -580,4 +581,4 @@ __exit:
 
     return ret ? INI_ERR : 0;
 }
-
+#endif
