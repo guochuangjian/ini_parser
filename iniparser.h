@@ -79,7 +79,7 @@ int ini_parser_file_save(struct ini_parser *obj, const char *file_name);
  * \param[in] value  : value name.
  * \return 0 : set successfully.
  */
-int ini_parser_value_set(struct ini_parser *obj, const char *s_name, const char *key, const char *name);
+int ini_parser_value_set(struct ini_parser *obj, const char *s_name, const char *key, const char *value);
 
 /*
  * \brief Get value from s_name and key.
@@ -89,7 +89,7 @@ int ini_parser_value_set(struct ini_parser *obj, const char *s_name, const char 
  * \param[in][out] value  : value name..
  * \return 0 : get successfully.
  */
-int ini_parser_value_get(struct ini_parser *obj, const char *s_name, const char *key, char **name);
+int ini_parser_value_get(struct ini_parser *obj, const char *s_name, const char *key, char **value);
 
 /*
  * \brief Add Section to ini-parser object.
