@@ -48,6 +48,9 @@ int ini_parser_delete(ini_parser_t *obj)
                 free(item);
             }
             list_del(&section->node);
+            if (section->name) {
+                free(section->name);
+            }
             free(section);
         }
     }
@@ -226,6 +229,9 @@ int ini_parser_section_remove (struct ini_parser *obj, const char *s_name)
                     free(item);
                 }
                 list_del(&cur_section->node);
+                if (cur_section->name) {
+                    free(cur_section->name);
+                }
                 free(cur_section);
                 return 0;
             }
